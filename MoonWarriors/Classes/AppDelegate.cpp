@@ -1,21 +1,18 @@
 //
-//  MoonWarriorsAppDelegate.cpp
-//  MoonWarriors
+//  MoonWarriorsxAppDelegate.cpp
+//  MoonWarriorsx
 //
-//  Created by lerry on 13-1-26.
-//  Copyright __MyCompanyName__ 2013年. All rights reserved.
+//  Created by 磊 王 on 12-12-27.
+//  Copyright __MyCompanyName__ 2012年. All rights reserved.
 //
 
 #include "AppDelegate.h"
 
 #include "cocos2d.h"
-#include "HelloWorldScene.h"
+#include "StartMenu.h"
 #include "SimpleAudioEngine.h"
-
-using namespace CocosDenshion;
-
 USING_NS_CC;
-
+using namespace CocosDenshion;
 AppDelegate::AppDelegate()
 {
 
@@ -29,16 +26,20 @@ bool AppDelegate::applicationDidFinishLaunching()
 {
     // initialize director
     CCDirector *pDirector = CCDirector::sharedDirector();
-    pDirector->setOpenGLView(CCEGLView::sharedOpenGLView());
+    CCEGLView* pEGLView = CCEGLView::sharedOpenGLView();
+    
+    pDirector->setOpenGLView(pEGLView);
 
-    // turn on display FPS
-    pDirector->setDisplayStats(true);
+    // 铺满屏幕，如果宽高比不一致，会拉伸导致失真
+    pEGLView->setDesignResolutionSize(320, 480, kResolutionExactFit);
+    // turn off display FPS
+    pDirector->setDisplayStats(false);
 
     // set FPS. the default value is 1.0/60 if you don't call this
     pDirector->setAnimationInterval(1.0 / 60);
 
     // create a scene. it's an autorelease object
-    CCScene *pScene = HelloWorld::scene();
+    CCScene *pScene = StartMenu::scene();
 
     // run
     pDirector->runWithScene(pScene);

@@ -1,9 +1,9 @@
 //
-//  MoonWarriorsAppDelegate.h
-//  MoonWarriors
+//  MoonWarriorsxAppDelegate.h
+//  MoonWarriorsx
 //
-//  Created by lerry on 13-1-26.
-//  Copyright __MyCompanyName__ 2013年. All rights reserved.
+//  Created by 磊 王 on 12-12-27.
+//  Copyright __MyCompanyName__ 2012年. All rights reserved.
 //
 
 #ifndef  _APP_DELEGATE_H_
